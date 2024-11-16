@@ -1,0 +1,12 @@
+/*css que estara presente en todas las paginas*/
+body {
+    background: radial-gradient(circle, rgba(22, 84, 25, 1) 0%, rgba(15, 51, 16, 1) 100%);
+    font-family: 'Julius Sans One';
+    color: white;
+}
+h1, .titulo {
+    font-family: 'Julius Sans One';
+}
+.hidden {
+    display: none;
+}

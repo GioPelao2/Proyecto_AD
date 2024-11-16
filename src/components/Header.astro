@@ -1,0 +1,93 @@
+<!-- Fuentes -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap" rel="stylesheet">
+
+<!-- Encabezado -->
+<header class="header flex flex-col items-center py-6 border-b-4 border-lime-600 bg-gray-900 shadow-lg">
+    <div class="logo-container flex items-center mb-4">
+        <img class="logo w-16 h-16" src="/src/images/walterblanco.png" alt="Logo Walter Asociados">
+        <h1 class="empresa text-white text-3xl font-bold mx-4 tracking-widest">Walter Asociados White</h1>
+    </div>
+    
+    <!-- Navegación -->
+    <nav class="navbar flex space-x-6">
+        <a class="nav-link" href="/">Inicio</a>
+        <a class="nav-link" href="/prisioneros">Prisioneros</a>
+        <a class="nav-link" href="/funcionarios">Funcionarios</a>
+        <a class="nav-link" href="/nosotros">Acerca de</a>
+    </nav>
+</header>
+
+<!-- Estilos -->
+<style>
+body {
+    margin: 0; /* Eliminar márgenes por defecto */
+    font-family: sans-serif; /* Fuente general para el cuerpo */
+}
+
+.header {
+    background-color: #07070c; /* Fondo oscuro para el encabezado */
+    position: relative; /* Posicionamiento relativo para sombra */
+}
+
+.logo-container {
+    display: flex; /* Alinear logo y nombre en una fila */
+    align-items: center; /* Centrar verticalmente el contenido */
+}
+
+.logo {
+    border-radius: 50%; /* Logo en forma circular */
+    transition: transform 0.3s; /* Efecto de transformación suave */
+}
+
+.logo:hover {
+    transform: scale(1.1); /* Efecto de zoom en hover */
+}
+
+.empresa {
+    font-family: "Julius Sans One"; /* Fuente para el nombre de la empresa */
+}
+
+.navbar {
+    display: flex; /* Usar flexbox para la navegación */
+}
+
+.nav-link {
+    color: white; /* Color de texto blanco */
+    padding: 10px 15px; /* Espaciado alrededor de los enlaces */
+    border-radius: 5px; /* Bordes redondeados */
+    position: relative; /* Posicionamiento relativo para el efecto de subrayado */
+    transition: color 0.3s, background-color 0.3s; /* Transiciones suaves */
+}
+
+.nav-link::after {
+    content: ""; /* Crea un pseudo-elemento */
+    position: absolute; /* Posicionamiento absoluto */
+    left: 50%; /* Centrar */
+    bottom: 0; /* Posicionar en la parte inferior */
+    width: 0; /* Ancho inicial */
+    height: 2px; /* Altura del subrayado */
+    background-color: lime; /* Color del subrayado */
+    transition: width 0.3s, left 0.3s; /* Transición suave */
+}
+
+.nav-link:hover {
+    color: lime; /* Cambiar color de texto en hover */
+}
+
+.nav-link:hover::after {
+    width: 100%; /* Expande el ancho en hover */
+    left: 0; /* Alinear a la izquierda */
+}
+
+@media (max-width: 640px) {
+    .navbar {
+        flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
+        align-items: center; /* Centrar enlaces */
+    }
+    .nav-link {
+        margin: 5px 0; /* Margen vertical para enlaces en móviles */
+    }
+}
+</style>

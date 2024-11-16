@@ -1,0 +1,47 @@
+---
+import Header from "@components/Header.astro";
+import Card from "@components/Card.astro";
+import '../styles/globals.css';
+import FormularioPrisioneros from "@components/FormularioPrisionero.astro"
+
+const prisoners = [
+  { id: 1, name: "Jorge Pheifezer", age: 32, crime: "Robo", sentence: "5 años" },
+  { id: 2, name: "Juan", age: 27, crime: "Fraude", sentence: "3 años" },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Gestión de Prisioneros</title>
+  </head>
+  <body class="bg-green-gradient min-h-screen">
+    <Header />
+
+     <!--Titulo -->
+    <main class="text-white mx-4 my-8">
+      <h1 class="text-4xl text-center mb-6 titulo">Gestión de Prisioneros</h1>
+      <!--Boton añadir prisioneros -->
+      <button id="add-prisoner-btn" class="flex items-center px-1 py-0.5 my-4 rounded-md bg-lime-600 text-white hover:bg-lime-500 transition">
+        Añadir prisionero
+      </button>
+
+      <FormularioPrisioneros id="prisonerForm" />
+
+      
+      <!--Cards de prisioneros -->
+      <div class="grid gap-6 grid-cols-1 py-8 md:grid-cols-2 lg:grid-cols-3">
+        {prisoners.map(prisoner => (
+          <Card name={prisoner.name} age={prisoner.age} detail={prisoner.crime} extraDetail={prisoner.sentence} />
+        ))}
+      </div>
+    </main>
+  </body>
+</html>
+
+<style>
+  #add-prisoner-btn {
+  align-items: center;
+}
+</style>
