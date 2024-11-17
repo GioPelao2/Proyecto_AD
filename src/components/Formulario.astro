@@ -1,0 +1,59 @@
+<form id="formulario-prisionero" class="hidden" action="#" method="post">
+  <label for="nombre">Nombre:</label>
+  <input type="text" id="nombre" name="nombre" required>
+
+  <label for="apellidos">Apellidos:</label>
+  <input type="text" id="apellidos" name="apellidos" required>
+
+  <label for="sexo">Sexo:</label>
+  <input type="text" id="sexo" name="sexo" required>
+
+  <label for="edad">Edad:</label>
+  <input type="number" id="edad" name="edad" required>
+
+  <label for="conducta">Conducta:</label>
+  <input type="text" id="conducta" name="conducta" required>
+
+  <label for="crimen">Crimen:</label>
+  <input type="text" id="crimen" name="crimen" required>
+
+  <label for="condena">Condena:</label>
+  <input type="text" id="condena" name="condena" required>
+
+  <label for="prision">Prision:</label>
+  <input type="text" name="prision" id="prision">
+
+  <button type="submit">Guardar</button>
+</form>
+
+<form id="formulario-funcionario" class="hidden" action="#" method="post">
+  <label for="nombres">Nombres:</label>
+  <input type="text" id="nombres" name="nombres" required>
+
+  <label for="apellidos">Apellidos:</label>
+  <input type="text" id="apellidos" name="apellidos" required>
+
+  <label for="edad">Edad:</label>
+  <input type="number" id="edad" name="edad" required>
+
+
+  <label for="condena">Condena:</label>
+  <input type="text" id="condena" name="condena" required>
+
+  <button type="submit">Guardar</button>
+</form>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const addButton = document.getElementById('add-btn');
+    const form = document.getElementById('formulario-prisionero');
+
+    if (addButton && form) {
+        addButton.addEventListener('click', () => {
+            form.classList.toggle('hidden');
+        });
+    } else {
+        console.error('No se encontraron los elementos');
+    }
+});
+</script>

@@ -2,7 +2,7 @@
 import Header from "@components/Header.astro";
 import Card from "@components/Card.astro";
 import '../styles/globals.css';
-import FormularioPrisioneros from "@components/FormularioPrisionero.astro"
+import Formulario from "@components/Formulario.astro"
 
 const prisoners = [
   { id: 1, name: "Jorge Pheifezer", age: 32, crime: "Robo", sentence: "5 años" },
@@ -22,13 +22,6 @@ const prisoners = [
      <!--Titulo -->
     <main class="text-white mx-4 my-8">
       <h1 class="text-4xl text-center mb-6 titulo">Gestión de Prisioneros</h1>
-      <!--Boton añadir prisioneros -->
-      <button id="add-prisoner-btn" class="flex items-center px-1 py-0.5 my-4 rounded-md bg-lime-600 text-white hover:bg-lime-500 transition">
-        Añadir prisionero
-      </button>
-
-      <FormularioPrisioneros id="prisonerForm" />
-
       
       <!--Cards de prisioneros -->
       <div class="grid gap-6 grid-cols-1 py-8 md:grid-cols-2 lg:grid-cols-3">
@@ -36,6 +29,14 @@ const prisoners = [
           <Card name={prisoner.name} age={prisoner.age} detail={prisoner.crime} extraDetail={prisoner.sentence} />
         ))}
       </div>
+
+      <button id="add-btn" class="flex py-2 px-1 my-4 mx-2 rounded-lg border-2 border-lime-300 bg-lime-600 text-white hover:bg-lime-700 transition float-left">
+        Añadir prisionero
+      </button>
+
+      <Formulario id="formulario-funcionario"/>
+
+      form
     </main>
   </body>
 </html>
