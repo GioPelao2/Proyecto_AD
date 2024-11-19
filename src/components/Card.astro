@@ -1,15 +1,25 @@
 ---
-const { name, age = null, detail, extraDetail } = Astro.props;
+const { nombre, apellido, genero, edad = null, conducta,crimen,sentencia} = Astro.props;
 ---
 
 <div class="card bg-gray-800 p-4 rounded-lg shadow-md text-white hover:bg-gray-700 transition">
-  <h2 class="text-xl font-semibold">{name}</h2>
-  {age && <p>Edad: {age}</p>}
-  <p>{detail}</p>
-  <p>{extraDetail}</p>
+  {nombre && apellido && (
+    <h2 class="text-xl font-semibold">Nombre: {nombre} {apellido}</h2>
+  )}
+  {genero && <p>Género: {genero}</p>} <!-- Género -->
+  {edad && <p>Edad: {edad}</p>} <!-- Edad -->
+  {conducta && <p>Conducta: {conducta}</p>} <!-- Conducta -->
+  {crimen && <p>Crimen: {crimen}</p>} <!-- Crimen -->
+  {sentencia && <p>Sentencia: {sentencia}</p>} <!-- Sentencia -->
+  
+  <!-- Botones -->
   <div class="flex justify-end space-x-4 mt-4">
-    <button class="text-white bg-lime-600 px-3 py-1 rounded-md hover:bg-lime-500 transition">Editar</button>
-    <button class="text-white bg-red-600 px-3 py-1 rounded-md hover:bg-red-500 transition">Eliminar</button>
+    <button class="text-white bg-lime-600 px-3 py-1 rounded-md hover:bg-lime-500 transition">
+      Editar
+    </button>
+    <button class="text-white bg-red-600 px-3 py-1 rounded-md hover:bg-red-500 transition">
+      Eliminar
+    </button>
   </div>
 </div>
 

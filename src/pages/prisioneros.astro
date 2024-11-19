@@ -2,15 +2,16 @@
 import Header from "@components/Header.astro";
 import Card from "@components/Card.astro";
 import '../styles/globals.css';
-import Formulario from "@components/Formulario.astro"
+import Formulario from "@components/Formulario.astro";
 
-const prisoners = [
-  { id: 1, name: "Jorge Pheifezer", age: 32, crime: "Robo", sentence: "5 años" },
-  { id: 2, name: "Juan", age: 27, crime: "Fraude", sentence: "3 años" },
+// Lista de prisioneros
+const prisioneros = [
+  { id: 1, nombre: "Jorge", apellido: "Pheifezer", genero: "Masculino", edad: 32, conducta: "Sin problemas", crimen: "Estafa", sentencia: "2 meses" },
+  { id: 2, nombre: "Juan", apellido:"Juan", genero:"Masculino", edad: 27, conducta: "Problematico", crimen:"Asesianto",sentencia: "58 años" },
 ];
 ---
 
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
@@ -19,30 +20,40 @@ const prisoners = [
   <body class="bg-green-gradient min-h-screen">
     <Header />
 
-     <!--Titulo -->
+    <!-- Título -->
     <main class="text-white mx-4 my-8">
       <h1 class="text-4xl text-center mb-6 titulo">Gestión de Prisioneros</h1>
       
-      <!--Cards de prisioneros -->
+      <!-- Cards de prisioneros -->
       <div class="grid gap-6 grid-cols-1 py-8 md:grid-cols-2 lg:grid-cols-3">
-        {prisoners.map(prisoner => (
-          <Card name={prisoner.name} age={prisoner.age} detail={prisoner.crime} extraDetail={prisoner.sentence} />
+        {prisioneros.map(prisionero => (
+          <Card 
+            nombre={prisionero.nombre} 
+            apellido={prisionero.apellido} 
+            genero={prisionero.genero} 
+            edad={prisionero.edad} 
+            conducta={prisionero.conducta}
+            crimen={prisionero.crimen}
+            sentencia={prisionero.sentencia}
+          />
         ))}
       </div>
 
-      <button id="add-btn" class="flex py-2 px-1 my-4 mx-2 rounded-lg border-2 border-lime-300 bg-lime-600 text-white hover:bg-lime-700 transition float-left">
+      <!-- Botón para añadir prisionero -->
+      <button id="add-btn" class="flex py-2 px-4 my-4 rounded-lg border-2 border-lime-300 bg-lime-600 text-white hover:bg-lime-700 transition">
         Añadir prisionero
       </button>
 
-      <Formulario id="formulario-funcionario"/>
+      <!-- Formulario -->
+      <Formulario id="formulario-prisionero" />
 
-      form
     </main>
   </body>
 </html>
 
 <style>
-  #add-prisoner-btn {
-  align-items: center;
-}
+  #add-btn {
+    align-items: center;
+  }
 </style>
+
